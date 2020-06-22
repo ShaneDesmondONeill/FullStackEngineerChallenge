@@ -1,0 +1,41 @@
+{
+    "paths": [
+        {
+            "name": "/default",
+            "lambdaFunction": "adminCreateEmployee2",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            }
+        }
+    ],
+    "resourceName": "adminCreateEmployee2",
+    "apiName": "adminCreateEmployee2",
+    "functionArns": [
+        {
+            "lambdaFunction": "adminCreateEmployee2"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-paypaychallenge-dev-182743-authRole",
+        "unAuthRoleName": "amplify-paypaychallenge-dev-182743-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "adminCreateEmployee2",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

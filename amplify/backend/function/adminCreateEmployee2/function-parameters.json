@@ -1,0 +1,20 @@
+{
+    "permissions": {
+        "auth": {
+            "paypaychallenge8a5d60b5": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        },
+        "api": {
+            "adminCreateEmployee": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    }
+}

@@ -1,0 +1,129 @@
+plugins:
+  - serverless-offline
+  - serverless-dynamodb-local
+
+custom:
+  serverless-offline:
+    httpPort: 4000
+
+service: paypay-challenge
+app: paypay-challenge-app
+org: shanedesmondoneill
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: ap-northeast-1
+  profile: paypay
+
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - 'cognito-idp:AdminCreateUser'
+        - 'cognito-idp:listUsers'
+      Resource: '*'
+
+package:
+  individually: true
+
+functions:
+  auth:
+    handler: build/auth.main
+    TimeToLiveSpecification: 0
+  getEmployeesEndpoint:
+    handler: build/getEmployees.main
+    events:
+      - http:
+          path: api/getEmployees
+          method: get
+          authorizer: auth
+          cors:
+            origins:
+              - '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+  createEmployeeEndpoint:
+    handler: build/createEmployee.main
+    events:
+      - http:
+          path: api/createEmployee
+          method: put
+          authorizer: auth
+          cors:
+            origins:
+              - '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+  writeReviewEndpoint:
+    handler: build/writeReview.main
+    events:
+      - http:
+          path: api/writeReview
+          method: put
+          authorizer: auth
+          cors:
+            origins:
+              - '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+
+  getFeedbackEndpoint:
+    handler: build/getFeedback.main
+    events:
+      - http:
+          path: api/getFeedback
+          method: get
+          authorizer: auth
+          cors:
+            origins:
+              - '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+  editFeedbackEndpoint:
+    handler: build/editFeedback.main
+    events:
+      - http:
+          path: api/editFeedback
+          method: put
+          authorizer: auth
+          cors:
+            origins:
+              - '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+
+resources:
+  Resources:
+    employeeReviews:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: paypayEmployeeReviews
+        AttributeDefinitions:
+          - AttributeName: 'userName'
+            AttributeType: 'S'
+        KeySchema:
+          - AttributeName: 'userName'
+            KeyType: 'HASH'
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1

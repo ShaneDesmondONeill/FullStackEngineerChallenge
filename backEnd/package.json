@@ -1,0 +1,16 @@
+{
+  "name": "paypay-challenge-backend",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "jsonwebtoken": "^7.1.9",
+    "jwk-to-pem": "^1.2.6",
+    "nodemon": "^2.0.4",
+    "promisify": "^0.0.3",
+    "serverless": "^1.73.1",
+    "serverless-dynamodb-local": "^0.2.39",
+    "typescript": "^3.9.5"
+  },
+  "author": "Shane O Neill"
+}

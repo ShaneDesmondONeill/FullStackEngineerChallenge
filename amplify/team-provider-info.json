@@ -1,0 +1,30 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-paypaychallenge-dev-182743-authRole",
+            "UnauthRoleArn": "arn:aws:iam::531302523811:role/amplify-paypaychallenge-dev-182743-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::531302523811:role/amplify-paypaychallenge-dev-182743-authRole",
+            "Region": "ap-northeast-1",
+            "DeploymentBucketName": "amplify-paypaychallenge-dev-182743-deployment",
+            "UnauthRoleName": "amplify-paypaychallenge-dev-182743-unauthRole",
+            "StackName": "amplify-paypaychallenge-dev-182743",
+            "StackId": "arn:aws:cloudformation:ap-northeast-1:531302523811:stack/amplify-paypaychallenge-dev-182743/5d466630-ae21-11ea-b83d-06ef10f7e39e",
+            "AmplifyAppId": "d1e89kojd3nbq3"
+        },
+        "categories": {
+            "function": {
+                "paypaychallenge8a5d60b5CustomMessage": {
+                    "REDIRECTURL": "http://localhost/signup",
+                    "EMAILSUBJECT": "You were added to the Human Resource Managment PayPay Web App",
+                    "EMAILMESSAGE": ""
+                },
+                "paypaychallenge8a5d60b5PostConfirmation": {
+                    "GROUP": "Employees"
+                }
+            },
+            "auth": {
+                "paypaychallenge8a5d60b5": {}
+            }
+        }
+    }
+}

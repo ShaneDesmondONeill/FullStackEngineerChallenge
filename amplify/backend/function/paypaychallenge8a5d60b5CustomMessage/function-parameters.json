@@ -1,0 +1,24 @@
+{
+    "trigger": true,
+    "modules": [
+        "verification-link"
+    ],
+    "parentResource": "paypaychallenge8a5d60b5",
+    "functionName": "paypaychallenge8a5d60b5CustomMessage",
+    "resourceName": "paypaychallenge8a5d60b5CustomMessage",
+    "parentStack": "auth",
+    "triggerEnvs": [
+        {
+            "key": "RESOURCENAME",
+            "value": "resourceName"
+        }
+    ],
+    "triggerDir": "/usr/local/lib/node_modules/@aws-amplify/cli/node_modules/amplify-category-auth/provider-utils/awscloudformation/utils/../triggers/CustomMessage",
+    "triggerTemplate": "CustomMessage.json.ejs",
+    "roleName": "paypaychallenge8a5d60b5CustomMessage",
+    "skipEdit": true,
+    "REDIRECTURL": "http://localhost/signup",
+    "EMAILSUBJECT": "You were added to the Human Resource Managment PayPay Web App",
+    "EMAILMESSAGE": "",
+    "RESOURCENAME": "resourceName"
+}
